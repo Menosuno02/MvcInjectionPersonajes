@@ -1,0 +1,29 @@
+﻿@model List<Personaje>
+
+<h1>Personajes</h1>
+<a asp-controller="Personajes" asp-action="Create"
+   class="btn btn-success my-3">
+    Crear personaje
+</a>
+
+<table class="table table-borderless">
+    <thead>
+        <tr>
+            <th>ID Personaje</th>
+            <th>Nombre</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Personaje personaje in Model)
+        {
+            <tr>
+                <td class="col-2">@personaje.IdPersonaje</td>
+                <td class="col-4">@personaje.NomPersonaje</td>
+                <td class="col-6">
+                    <img class="w-50" src="@personaje.Imagen" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
