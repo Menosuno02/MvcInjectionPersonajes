@@ -2,7 +2,7 @@
 
 <h1>Personajes</h1>
 <a asp-controller="Personajes" asp-action="Create"
-   class="btn btn-success my-3">
+   class="btn btn-success my-4 w-75 mx-auto d-block">
     Crear personaje
 </a>
 
@@ -19,9 +19,9 @@
         {
             <tr>
                 <td class="col-2">@personaje.IdPersonaje</td>
-                <td class="col-4">@personaje.NomPersonaje</td>
-                <td class="col-6">
-                    <img class="w-50" src="@personaje.Imagen" />
+                <td class="col-5">@personaje.NomPersonaje</td>
+                <td class="col-5">
+                    <img class="w-75" src="@personaje.Imagen" height="200"/>
                 </td>
             </tr>
         }

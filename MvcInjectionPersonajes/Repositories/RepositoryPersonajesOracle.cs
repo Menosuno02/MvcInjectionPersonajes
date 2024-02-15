@@ -21,6 +21,7 @@ namespace MvcInjectionPersonajes.Repositories
             OracleDataAdapter adapter = new OracleDataAdapter(sql, this.cn);
             adapter.Fill(tablaPersonajes);
         }
+
         public List<Personaje> GetPersonajes()
         {
             var consulta = from datos in this.tablaPersonajes.AsEnumerable()

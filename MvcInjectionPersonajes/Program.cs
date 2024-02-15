@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddTransient<IRepositoryPersonajes, RepositoryPersonajesOracle>();
+builder.Services.AddTransient<IRepositoryPersonajes, RepositoryPersonajesSQLClient>();
 
 var app = builder.Build();
 
