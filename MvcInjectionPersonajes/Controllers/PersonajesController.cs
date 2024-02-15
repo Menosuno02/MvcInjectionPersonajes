@@ -30,5 +30,36 @@ namespace MvcInjectionPersonajes.Controllers
             this.repo.CreatePersonaje(personaje);
             return RedirectToAction("Index");
         }
+
+        public IActionResult Update(int id)
+        {
+            Personaje personaje = this.repo.FindPersonaje(id);
+            return View(personaje);
+        }
+
+        [HttpPost]
+        public IActionResult Update(Personaje personaje)
+        {
+            this.repo.UpdatePersonaje(personaje);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Delete(int id)
+        {
+            this.repo.DeletePersonaje(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult BuscarPersonajes()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult BuscarPersonajes(string nombre)
+        {
+            List<Personaje> personajes = this.repo.FiltrarPersonajes(nombre);
+            return View(personajes);
+        }
     }
 }

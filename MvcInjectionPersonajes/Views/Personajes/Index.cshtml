@@ -12,18 +12,20 @@
             <th>ID Personaje</th>
             <th>Nombre</th>
             <th>Imagen</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (Personaje personaje in Model)
         {
             <tr>
-                <td class="col-2">@personaje.IdPersonaje</td>
-                <td class="col-5">@personaje.NomPersonaje</td>
-                <td class="col-5">
-                    <img class="w-75" src="@personaje.Imagen" height="200"/>
+                <td>@personaje.IdPersonaje</td>
+                <td>@personaje.NomPersonaje</td>
+                <td>
+                    <img src="@personaje.Imagen" height="200" width="200" />
                 </td>
             </tr>
         }
+
     </tbody>
 </table>
