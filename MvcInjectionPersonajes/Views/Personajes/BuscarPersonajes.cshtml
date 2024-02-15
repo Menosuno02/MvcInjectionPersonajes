@@ -1,11 +1,11 @@
 ﻿<h1>Filtrar personajes por nombre</h1>
 
-<form method="post">
+<form method="post" class="mt-4">
     <input type="text" name="nombre" class="form-control" placeholder="Nombre" />
-    <button class="btn btn-info mt-3">Filtrar</button>
+    <button class="btn btn-info mt-3 w-100">Filtrar</button>
 </form>
 
-<h2 class="text-danger mx-auto d-block mt-3 w-50">@ViewData["MENSAJE"]</h2>
+<h2 class="text-danger text-center mt-5">@ViewData["MENSAJE"]</h2>
 
 @if (Model != null)
 {
