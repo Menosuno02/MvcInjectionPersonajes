@@ -1,5 +1,31 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿<h1>Filtrar personajes por nombre</h1>
+
+<form method="post">
+    <input type="text" name="nombre" class="form-control" placeholder="Nombre" />
+    <button class="btn btn-info mt-3">Filtrar</button>
+</form>
+
+<h2 class="text-danger mx-auto d-block mt-3 w-50">@ViewData["MENSAJE"]</h2>
+
+@if (Model != null)
+{
+    <table class="table table-borderless">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Personaje pers in Model)
+            {
+                <tr>
+                    <td>@pers.IdPersonaje</td>
+                    <td>@pers.NomPersonaje</td>
+                    <td><img src="@pers.Imagen" width="300" /> </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }

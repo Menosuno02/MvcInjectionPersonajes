@@ -1,10 +1,22 @@
 ﻿@model List<Personaje>
 
 <h1>Personajes</h1>
-<a asp-controller="Personajes" asp-action="Create"
-   class="btn btn-success my-4 w-75 mx-auto d-block">
-    Crear personaje
-</a>
+<div class="row my-4">
+    <div class="col-6">
+        <a asp-controller="Personajes" asp-action="Create"
+           class="btn btn-success w-100">
+            Crear personaje
+        </a>
+    </div>
+    <div class="col-6">
+        <a asp-controller="Personajes" asp-action="BuscarPersonajes"
+           class="btn btn-info w-100">
+            Buscar personajes por nombre
+        </a>
+    </div>
+</div>
+
+
 
 <table class="table table-borderless">
     <thead>
@@ -23,6 +35,12 @@
                 <td>@personaje.NomPersonaje</td>
                 <td>
                     <img src="@personaje.Imagen" height="200" width="200" />
+                </td>
+                <td>
+                    <a class="btn btn-primary btn-sm" asp-controller="Personajes" asp-action="Update"
+                       asp-route-id="@personaje.IdPersonaje">Update</a>
+                    <a class="btn btn-danger btn-sm" asp-controller="Personajes" asp-action="Delete"
+                       asp-route-id="@personaje.IdPersonaje">Delete</a>
                 </td>
             </tr>
         }

@@ -59,6 +59,10 @@ namespace MvcInjectionPersonajes.Controllers
         public IActionResult BuscarPersonajes(string nombre)
         {
             List<Personaje> personajes = this.repo.FiltrarPersonajes(nombre);
+            if (personajes == null)
+            {
+                ViewData["MENSAJE"] = "No se encontró personaje con nombre " + nombre;
+            }
             return View(personajes);
         }
     }

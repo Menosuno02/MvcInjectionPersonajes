@@ -1,5 +1,11 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Personaje
+<h1>Modificar personaje</h1>
+
+<form method="post">
+    <input type="hidden" name="idpersonaje" value="@Model.IdPersonaje" />
+    <label class="form-label mt-3">Nombre</label>
+    <input type="text" name="nompersonaje" value="@Model.NomPersonaje" class="form-control" />
+    <label class="form-label mt-3">Imagen</label>
+    <input type="text" name="imagen" value="@Model.Imagen" class="form-control" />
+    <button class="btn btn-primary mt-3 w-100">Modificar personaje</button>
+</form>
